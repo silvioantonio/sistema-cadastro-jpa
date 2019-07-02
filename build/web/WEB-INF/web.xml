@@ -20,6 +20,18 @@
         <servlet-name>InserirVaga</servlet-name>
         <servlet-class>com.silvio.operacoes.InserirVaga</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ConsultarVaga</servlet-name>
+        <servlet-class>com.silvio.operacoes.ConsultarVaga</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultarEmpresa</servlet-name>
+        <servlet-class>com.silvio.operacoes.ConsultarEmpresa</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ConsultarCandidato</servlet-name>
+        <servlet-class>com.silvio.operacoes.ConsultarCandidato</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Teste</servlet-name>
         <url-pattern>/Teste</url-pattern>
@@ -39,6 +51,18 @@
     <servlet-mapping>
         <servlet-name>InserirVaga</servlet-name>
         <url-pattern>/InserirVaga</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarVaga</servlet-name>
+        <url-pattern>/ConsultarVaga</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarEmpresa</servlet-name>
+        <url-pattern>/ConsultarEmpresa</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ConsultarCandidato</servlet-name>
+        <url-pattern>/ConsultarCandidato</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -8,6 +8,7 @@ package com.silvio.dominio;
 import java.io.Serializable;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -20,6 +21,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
@@ -64,7 +67,7 @@ public class Candidato implements Serializable, Cadastro {
     
     @OneToMany(mappedBy = "candidato", cascade = CascadeType.ALL)
     @Column(name="experiencias_proficionais")
-    private List<ExperienciaProficional> experienciasProficionais;
+    private List<ExperienciaProficional> experienciasProficionais= new ArrayList<>();
     
     @Embedded
     private Rg rg;
@@ -72,7 +75,9 @@ public class Candidato implements Serializable, Cadastro {
     @Embedded
     private Endereco endereco;
 
-    
+    @ManyToOne
+    @JoinColumn(name = "vaga_id", referencedColumnName = "id")
+    private Vaga vaga;
     
     public int getCpf() {
         return cpf;
@@ -186,6 +191,14 @@ public class Candidato implements Serializable, Cadastro {
         }
         final Candidato other = (Candidato) obj;
         return Objects.equals(this.id, other.id);
+    }
+
+    public Vaga getVaga() {
+        return vaga;
+    }
+
+    public void setVaga(Vaga vaga) {
+        this.vaga = vaga;
     }
     
     

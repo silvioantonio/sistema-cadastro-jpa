@@ -10,6 +10,7 @@ import com.silvio.dominio.Vaga;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
+import java.util.function.Function;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -37,19 +38,18 @@ public class InserirEmpresa extends HttpServlet {
         
             
             Empresa empresa = new Empresa();
-            empresa.setAreaDeAtuacao("Educação");
+            empresa.setAreaDeAtuacao("Panificaçao");
             empresa.setCnpj(1234000112);
-            empresa.setNome("Pioneiros Flamejantes");
+            empresa.setNome("Pao Divino");
             
             Endereco endereco = new Endereco();
             endereco.setCep(270000);
-            endereco.setCidade("palmas");
-            endereco.setNumero(1);
-            endereco.setUf("TO");
+            endereco.setCidade("goiania");
+            endereco.setNumero(2);
+            endereco.setUf("GO");
             
             DaoFactory dao = new DaoFactory();
             
-            empresa.setAcesso(dao.getAcessoDao().findById(1));
             empresa.setEndereco(endereco);
             
             dao.getEmpresaDao().add(empresa);
@@ -73,10 +73,10 @@ public class InserirEmpresa extends HttpServlet {
             }).map((emp) -> {
                 out.println("<p>CNPJ: "+emp.getCnpj());
                 return emp;
-            }).map((emp) -> {
+            }).map((Empresa emp) -> {
                 out.println("<p>CEP: "+emp.getEndereco().getCep());
                 return emp;
-            }).map((emp) -> {
+            }).map((Empresa emp) -> {
                 out.println("<p>Cidade: "+emp.getEndereco().getCidade());
                 return emp;
             }).map((emp) -> {

@@ -3,6 +3,7 @@ package com.silvio.dao;
 import com.silvio.dominio.Acesso;
 import com.silvio.dominio.Candidato;
 import com.silvio.dominio.Empresa;
+import com.silvio.dominio.ExperienciaProficional;
 import com.silvio.dominio.Telefone;
 import com.silvio.dominio.Vaga;
 /**
@@ -33,4 +34,11 @@ public class DaoFactory {
         return new VagaDao(Vaga.class);
     }
      
+    public CandidatoDao getCandDao(){
+        return new CandidatoDao(Candidato.class);
+    }
+    
+    public ExperienciaDao getExperienciaDao(){
+        return new ExperienciaDao(ExperienciaProficional.class);
+    }
 }

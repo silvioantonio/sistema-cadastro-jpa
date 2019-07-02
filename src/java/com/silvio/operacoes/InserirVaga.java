@@ -8,6 +8,7 @@ import com.silvio.dominio.Turno;
 import com.silvio.dominio.Vaga;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,11 +36,11 @@ public class InserirVaga extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         Vaga vaga = new Vaga();
-        vaga.setCargo("Suporte Operacional");
+        vaga.setCargo("Suporte ");
         vaga.setEspecificacaoDeCargo("Fazer tudo e mais um pouco");
         vaga.setFormaDeContratacao(FormaDeContratacao.CLT);
-        vaga.setRemuneracao(1250.00);
-        vaga.setTurno(Turno.VESPERTINO);
+        vaga.setRemuneracao(1050.00);
+        vaga.setTurno(Turno.MATUTINO);
         vaga.setUf("TO");
         vaga.setValeRefeicao(true);
         vaga.setValeTransporte(true);
@@ -47,12 +48,14 @@ public class InserirVaga extends HttpServlet {
         
         DaoFactory dao = new DaoFactory();
         
-        Empresa empresa = (Empresa)dao.getEmpresaDao().findById(1);
+        Empresa empresa = dao.getEmpresaDao().findById(1);
 
         vaga.setEmpresa(empresa);
         
         dao.getVagaDao().add(vaga);
-        empresa.getVagas().add(vaga);
+        List<Vaga> vagas = empresa.getVagas();
+        vagas.add(vaga);
+        empresa.setVagas(vagas);
         dao.getEmpresaDao().upd(empresa);
         
         try (PrintWriter out = response.getWriter()) {

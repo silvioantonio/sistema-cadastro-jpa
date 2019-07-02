@@ -6,7 +6,10 @@
 package com.silvio.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,6 +19,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -63,6 +67,10 @@ public class Vaga implements Serializable, Cadastro {
     @ManyToOne
     @JoinColumn(name = "empresa_id", referencedColumnName = "id")
     private Empresa empresa;
+    
+    @OneToMany(mappedBy = "vaga", cascade = CascadeType.ALL)
+    private List<Candidato> candidatos= new ArrayList<>();
+    
 
     @Override
     public int hashCode() {
@@ -174,6 +182,14 @@ public class Vaga implements Serializable, Cadastro {
 
     public void setEmpresa(Empresa empresa) {
         this.empresa = empresa;
+    }
+
+    public List<Candidato> getCandidatos() {
+        return candidatos;
+    }
+
+    public void setCandidatos(List<Candidato> candidatos) {
+        this.candidatos = candidatos;
     }
 
 }

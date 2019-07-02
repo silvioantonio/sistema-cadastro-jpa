@@ -6,6 +6,7 @@
 package com.silvio.dominio;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -51,7 +52,7 @@ public class Empresa implements Serializable, Cadastro {
     private Telefone telefone;
     
     @OneToMany(mappedBy = "empresa", cascade = CascadeType.ALL)
-    private List<Vaga> vagas;
+    private List<Vaga> vagas= new ArrayList<>();
 
     public int getCnpj() {
         return cnpj;

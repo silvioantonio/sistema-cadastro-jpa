@@ -28,6 +28,35 @@ public class VagaDao extends DaoGenerico{
         query.setParameter("parametro", i);
         return query.getResultList();
     }
-
+    
+    public List<Vaga> getVagasByCargo(String cargo){
+        EntityManager em = JpaUtil.getEntityManager();
+        String jpql = "select v from Vaga v where v.cargo like :parametro";
+        Query query = em.createQuery(jpql,Vaga.class);
+        query.setParameter("parametro", "%"+cargo+"%");
+        return query.getResultList();
+    }
+    
+    public List<Vaga> getVagasByCidade(String cidade) {
+        EntityManager em = JpaUtil.getEntityManager();
+        String jpql = "select v from Vaga v "
+                + "inner join Empresa e "
+                + "on e.endereco.cidade like :parametro "
+                + "and v.empresa.id = e.id";
+        Query query = em.createQuery(jpql, Vaga.class);
+        query.setParameter("parametro", cidade);
+        return query.getResultList();
+    }
+    
+    public List<Vaga> getVagasByEstado(String estado) {
+        EntityManager em = JpaUtil.getEntityManager();
+        String jpql = "select v from Vaga v "
+                + "inner join Empresa e "
+                + "on e.endereco.uf like :parametro "
+                + "and v.empresa.id = e.id";
+        Query query = em.createQuery(jpql, Vaga.class);
+        query.setParameter("parametro", estado);
+        return query.getResultList();
+    }
     
 }

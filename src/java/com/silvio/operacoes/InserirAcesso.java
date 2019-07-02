@@ -37,7 +37,7 @@ public class InserirAcesso extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         
         Acesso acesso = new Acesso();
-        acesso.setEmail("empresa.tel@empresa.com");
+        acesso.setEmail("empresa2.tel@empresa.com");
         acesso.setLogin("empresa");
         acesso.setSenha("empresa");
         acesso.setReceberNoticia(true);

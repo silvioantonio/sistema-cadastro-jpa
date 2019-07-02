@@ -33,8 +33,6 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
         }catch(Exception e){
             System.err.println("Erro: " + e);
             em.getTransaction().rollback();
-        }finally{
-            //em.close();
         }
     }
 
@@ -48,8 +46,6 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
         }catch(Exception e){
             System.err.println("Erro: "+ e);
             em.getTransaction().rollback();
-        }finally{
-           // em.close();
         }
     }
 
@@ -65,8 +61,6 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
         }catch(Exception e){
             System.err.println("Erro: "+e);
             em.getTransaction().rollback();
-        }finally{
-           // em.close();
         }
     }
 
@@ -76,8 +70,6 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
 
         T u = (T) em.find(classe, id);
 
-        em.close();
-
         return u;
     }
 
@@ -86,7 +78,6 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
         EntityManager em = JpaUtil.getEntityManager();
         String jpql = "from "+classe.getSimpleName();
         List<T> lista = em.createQuery(jpql, classe).getResultList();
-        //em.close();
         return lista;
     }
     
@@ -100,5 +91,5 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
         //em.close();
         return lista;
     }
-    
+ 
 }
