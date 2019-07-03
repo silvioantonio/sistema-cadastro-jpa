@@ -1,0 +1,116 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 02/07/2019, 20:27:28
+    Author     : SILVIO
+*/
+
+html,body,#home{
+    height: 100%;
+    overflow: hidden visible;/*Mesmo que overflow-x:hidden
+                                e overflow-y:visible*/
+}
+body{
+    background: url(../imagens/capa.png),/*As duas imagens tem opacidade, por isso o efeito funciona*/
+                url(../imagens/ruido.png),
+                linear-gradient(50deg,#ff4169,#7c26f8);
+    background-attachment: fixed;
+    font-family: "Helvetica","Arial","sans-serif";
+}
+
+nav.navbar-transparente{
+    background: rgba(0,0,0,0.6);
+    padding: 15px 0;
+}
+.navbar-light .navbar-nav .nav-link{
+    color: white;
+}
+.navbar-light .navbar-nav .nav-link:hover{
+    color: #9bf0e1;
+}
+.navbar-light .navbar-toggler{
+    color: rgba(255, 255, 255,.5);
+    border-color: rgba(255,255,255,0.5);
+}
+.divisor{
+    width: 1px;
+    background: white;
+    margin: 12px 15px;
+}
+.capa{
+    text-align: center;
+}
+h1{
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    margin-bottom: 50px;
+    color: white;
+}
+h2{
+    font-size: 3em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+h3{
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+}
+#servicos{
+    background: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#servicos h2,h3{
+    color: #7c25f8;
+}
+#recursos{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: white;
+}
+#recursos h2{
+    color: white;
+}
+#recursos h3{
+    color: #9bf0e1;
+}
+.albuns{
+    padding: 10px 0;
+}
+.rotacionar{
+    transform: rotate(30deg);
+    padding-left: 80px;
+}
+footer{
+    background: #000;
+    padding: 50px 0px 20px 0px;
+    position: relative;
+}
+footer h4{
+    color: #919496;
+    font-size: 0.8em;
+    text-transform: uppercase;
+}
+footer .navbar-nav{
+    color: white;
+    font-size: 0.8em;
+}
+footer .navbar-nav a:hover{
+    color: #9bf0e1;
+    text-decoration: none;
+}
+footer ul{
+    list-style: none;
+}
+footer ul li{
+    float: right;
+    margin: 0 5px;
+}
+.carousel-control-prev, .carousel-control-next{
+    width: 5%;
+}
+
