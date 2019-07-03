@@ -5,6 +5,10 @@
              xmlns:p="http://primefaces.org/ui"
              xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
              template="template.xhtml">
-    <p:dataTable value="#{teste.adicionar}"
+    <p:dataTable value="#{teste.adicionar}" var="teste">
+        <p:column headerText="Nome" sortBy="#{teste.candidatos.candDao.listaAll}">
+            <h:outputText value="#{teste.candidatos.candDao.listaAll}"></h:outputText>
+        </p:column>
+    </p:dataTable>
 </ui:decorate>
 
