@@ -4,26 +4,26 @@
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
-    <servlet> 
+    <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
-        <servlet-name>InserirEmpresa</servlet-name>
-        <servlet-class>com.silvio.operacoes.InserirEmpresa</servlet-class>
+        <servlet-name>OperacoesEmpresa</servlet-name>
+        <servlet-class>com.silvio.operacoes.OperacoesEmpresa</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>InserirCandidato</servlet-name>
-        <servlet-class>com.silvio.operacoes.InserirCandidato</servlet-class>
+        <servlet-name>OperacoesCandidato</servlet-name>
+        <servlet-class>com.silvio.operacoes.OperacoesCandidato</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>InserirAcesso</servlet-name>
-        <servlet-class>com.silvio.operacoes.InserirAcesso</servlet-class>
+        <servlet-name>OperacoesAcesso</servlet-name>
+        <servlet-class>com.silvio.operacoes.OperacoesAcesso</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>InserirVaga</servlet-name>
-        <servlet-class>com.silvio.operacoes.InserirVaga</servlet-class>
+        <servlet-name>OperacoesVaga</servlet-name>
+        <servlet-class>com.silvio.operacoes.OperacoesVaga</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>ConsultarVaga</servlet-name>
@@ -37,21 +37,25 @@
         <servlet-name>ConsultarCandidato</servlet-name>
         <servlet-class>com.silvio.operacoes.ConsultarCandidato</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>OperacoesExperienciaProfissional</servlet-name>
+        <servlet-class>com.silvio.operacoes.OperacoesExperienciaProfissional</servlet-class>
+    </servlet>
     <servlet-mapping>
-        <servlet-name>InserirEmpresa</servlet-name>
-        <url-pattern>/InserirEmpresa</url-pattern>
+        <servlet-name>OperacoesEmpresa</servlet-name>
+        <url-pattern>/OperacoesEmpresa</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>InserirCandidato</servlet-name>
-        <url-pattern>/InserirCandidato</url-pattern>
+        <servlet-name>OperacoesCandidato</servlet-name>
+        <url-pattern>/OperacoesCandidato</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>InserirAcesso</servlet-name>
-        <url-pattern>/InserirAcesso</url-pattern>
+        <servlet-name>OperacoesAcesso</servlet-name>
+        <url-pattern>/OperacoesAcesso</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>InserirVaga</servlet-name>
-        <url-pattern>/InserirVaga</url-pattern>
+        <servlet-name>OperacoesVaga</servlet-name>
+        <url-pattern>/OperacoesVaga</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ConsultarVaga</servlet-name>
@@ -68,6 +72,10 @@
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.jsf</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OperacoesExperienciaProfissional</servlet-name>
+        <url-pattern>/OperacoesExperienciaProfissional</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

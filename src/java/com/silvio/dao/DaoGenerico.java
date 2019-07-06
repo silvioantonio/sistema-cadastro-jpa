@@ -56,7 +56,7 @@ public class DaoGenerico<T> implements IDaoGenerico<T> {
             em.getTransaction().begin();
             
             //u = em.merge(u);
-            em.remove(u);
+            em.remove(em.contains(u) ? u : em.merge(u));
             em.getTransaction().commit();
         }catch(Exception e){
             System.err.println("Erro: "+e);

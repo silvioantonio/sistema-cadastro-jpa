@@ -42,10 +42,10 @@ public class ConsultarCandidato extends HttpServlet {
         //List<Candidato> candidatos = dao.getCandDao().getCandidatoByCargo("Atendente");
         
         //CONSULTAR CANDIDATO POR CIDADE
-        //List<Candidato> candidatos = dao.getCandDao().getCandidatoByCidade("ALMAS");
+        List<Candidato> candidatos = dao.getCandDao().getCandidatoByCidade("ALMAS");
                 
        //CONSULTAR CANDIDATO POR ESTADO
-       List<Candidato> candidatos = dao.getCandDao().getCandidatoByEstado("TO");        
+       //List<Candidato> candidatos = dao.getCandDao().getCandidatoByEstado("TO");        
         
        
         try (PrintWriter out = response.getWriter()) {

@@ -37,13 +37,13 @@ public class ConsultarVaga extends HttpServlet {
         List<Vaga> vagas = dao.getVagaDao().getVagasByIdEmpresa(1);*/
         
         //CONSULTAR VAGA POR CARGO
-        //List<Vaga> vagas = dao.getVagaDao().getVagasByCargo("Suporte");
+        List<Vaga> vagas = dao.getVagaDao().getVagasByCargo("Suporte");
         
         //CONSULTAR VAGA POR CIDADE
         //List<Vaga> vagas = dao.getVagaDao().getVagasByCidade("Goiania");
         
         //CONSULTAR VAGA POR ESTADO
-        List<Vaga> vagas = dao.getVagaDao().getVagasByEstado("GO");
+        //List<Vaga> vagas = dao.getVagaDao().getVagasByEstado("GO");
 
         
         

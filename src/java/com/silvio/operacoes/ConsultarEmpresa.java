@@ -35,10 +35,10 @@ public class ConsultarEmpresa extends HttpServlet {
         //List<Empresa> empresas = dao.getEmpresaDao().JpqlLike("endereco.cidade", "p");
    
         //CONSULTAR EMPRESA POR ESTADO
-        //List<Empresa> empresas = dao.getEmpresaDao().JpqlLike("endereco.uf", "ST");
+        List<Empresa> empresas = dao.getEmpresaDao().JpqlLike("endereco.uf", "ST");
         
         //CONSULTAR EMPRESA POR NOME
-        List<Empresa> empresas = dao.getEmpresaDao().JpqlLike("nome", "Hard");
+        //List<Empresa> empresas = dao.getEmpresaDao().JpqlLike("nome", "Hard");
 
         try (PrintWriter out = response.getWriter()) {
             out.println("<!DOCTYPE html>");

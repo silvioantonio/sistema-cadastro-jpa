@@ -33,4 +33,13 @@ public class ExperienciaDao extends DaoGenerico{
         return query.getResultList();
     }
     
+    public ExperienciaProficional getExperienciaById(int id){
+        EntityManager em = JpaUtil.getEntityManager();
+        String jpql = "select ex from ExperienciaProficional ex "
+                + "where ex.id = :parametro";
+        Query query = em.createQuery(jpql, ExperienciaProficional.class);
+        query.setParameter("parametro", id);
+        return (ExperienciaProficional) query.getSingleResult();
+    }
+    
 }

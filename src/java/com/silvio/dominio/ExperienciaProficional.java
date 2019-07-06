@@ -66,7 +66,8 @@ public class ExperienciaProficional implements Serializable, Cadastro {
         return id;
     }
 
-    public void setId(Integer id) {
+    @Override
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -153,10 +154,4 @@ public class ExperienciaProficional implements Serializable, Cadastro {
         }
         return true;
     }
-
-    @Override
-    public void setId(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
